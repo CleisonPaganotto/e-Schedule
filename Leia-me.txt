@@ -2,4 +2,4 @@ Projeto desenvoldo para a disciplina: Projeto Integrador 2
 Nome dos Integrantes: Cleison Paganotto e João Victor Santos
 Nome do Projeto: e-Schedule
 
-O e-Schedule é um sistema para gerenciamento de agendamento de serviços que devem ser realizados para determinados clientes. O sistema sera Web e desenvolvido em PHP.
+O e-Schedule é um sistema para gerenciamento de agendamento de serviços que devem ser realizados para determinados clientes. O sistema sera Web e desenvolvido em Node e MongoDB.
