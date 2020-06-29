@@ -23,13 +23,11 @@
   <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
-    <div class="bg-secondary border-right" id="sidebar-wrapper">
+    <div class="bg-dark" id="sidebar-wrapper">
       <div class="sidebar-heading text-light text-center">e-Schedulle</div>
       <div class="list-group list-group-flush">
-        <a href="agendamentos.html" class="list-group-item list-group-item-action bg-secondary text-light">Agendados</a>
-        <a href="cadAgendamento.html" class="list-group-item list-group-item-action bg-secondary text-light">Agendar</a>
-        <a href="index.html" class="list-group-item list-group-item-action bg-secondary text-light">Clientes</a>
-        <a href="cadCliente.html" class="list-group-item list-group-item-action bg-secondary text-light">Cadastrar Cliente</a>
+        <a href="agendamentos.html" class="list-group-item list-group-item-action bg-dark text-light">Agendamentos</a>
+        <a href="index.html" class="list-group-item list-group-item-action bg-dark text-light">Clientes</a>
         
       </div>
     </div>
@@ -38,8 +36,9 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn-primary" id="menu-toggle">Esconder menu</button>
+      <nav class="navbar navbar-expand-lg navbar-light bg-secondary border border-secondary col mb-5">
+        
+        <form method="get" action="cadAgendamento.html"><button  class="btn btn-success" type="submit">Agendar</button></form>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -48,11 +47,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+              <a class="nav-link text-light" href="agendamentos.html">Inicio <span class="sr-only">(current)</span></a>
             </li>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Configurações
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -67,43 +66,54 @@
       </nav>
 
       <div class="container-fluid">
-        <div class="card border border-secondary" style="width: auto;">
-            <table class="table ">
-              <thead>
-                <tr>
-                  <th scope="col">Nome do cliente</th>
-                  <th scope="col">CPF</th>
-                  <th scope="col">Telefone</th>
-                  <th scope="col">E-mail</th>
-                  <th scope="col">Placa do veículo</th>
-                </tr>
-              </thead>
-              <tbody class= text-center>
-                <tr>
-                  <td>Mark</td>
-                  <td>123654</td>
-                  <td>481521654</td>
-                  <td>jooj@gmail.com</td>
-                  <td>abc1234</td>
-                </tr>
-                <tr>
-                  <td>Jacob</td>
-                  <td>6554321</td>
-                  <td>45484123</td>
-                  <td>jooj@gmail.com</td>
-                  <td>abc1234</td>
-                </tr>
-                <tr>
-                  <td>Larry</td>
-                  <td>454648412</td>
-                  <td>459848123</td>
-                  <td>jooj@gmail.com</td>
-                  <td>abc1234</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+        <table class="table position-sticky">
+          <thead>
+            <tr>
+              <th class="text-center border border-secondary" scope="col">Nome do cliente</th>
+              <th class="text-center border border-secondary" scope="col">CPF</th>
+              <th class="text-center border border-secondary" scope="col">Telefone</th>
+              <th class="text-center border border-secondary" scope="col">E-mail</th>
+              <th class="text-center border border-secondary" scope="col">Placa do Veículo</th>
+            </tr>
+          </thead>
+          <tbody class= text-center >
+            <tr>
+              <td class="border border-secondary">Mark</td>
+              <td class="border border-secondary">123654</td>
+              <td class="border border-secondary">481521654</td>
+              <td class="border border-secondary">jooj@gmail.com</td>
+              <td class="border border-secondary">abc1234</td>
+              <td class="border border-secondary">
+                <button class="btn btn-primary" type="submit">Alterar</button>
+                <button class="btn btn-danger" type="submit">Excluir</button>
+              </td>
+              
+            </tr>
+            <tr>
+              <td class="border border-secondary">Jacob</td>
+              <td class="border border-secondary">6554321</td>
+              <td class="border border-secondary">45484123</td>
+              <td class="border border-secondary">jooj@gmail.com</td>
+              <td class="border border-secondary">abc1234</td>
+              <td class="border border-secondary">
+                <button class="btn btn-primary" type="submit">Alterar</button>
+                <button class="btn btn-danger" type="submit">Excluir</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="border border-secondary">Larry</td>
+              <td class="border border-secondary">454648412</td>
+              <td class="border border-secondary">459848123</td>
+              <td class="border border-secondary">jooj@gmail.com</td>
+              <td class="border border-secondary">abc1234</td>
+              <td class="border border-secondary">
+                <button class="btn btn-primary" type="submit">Alterar</button>
+                <button class="btn btn-danger" type="submit">Excluir</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
       </div>
     </div>
     <!-- /#page-content-wrapper -->

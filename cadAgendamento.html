@@ -23,13 +23,11 @@
   <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
-    <div class="bg-secondary border-right" id="sidebar-wrapper">
+    <div class="bg-dark" id="sidebar-wrapper">
       <div class="sidebar-heading text-light text-center">e-Schedulle</div>
       <div class="list-group list-group-flush">
-        <a href="agendamentos.html" class="list-group-item list-group-item-action bg-secondary text-light">Agendados</a>
-        <a href="cadAgendamento.html" class="list-group-item list-group-item-action bg-secondary text-light">Agendar</a>
-        <a href="index.html" class="list-group-item list-group-item-action bg-secondary text-light">Clientes</a>
-        <a href="cadCliente.html" class="list-group-item list-group-item-action bg-secondary text-light">Cadastrar Cliente</a>
+        <a href="agendamentos.html" class="list-group-item list-group-item-action bg-dark text-light">Agendamentos</a>
+        <a href="index.html" class="list-group-item list-group-item-action bg-dark text-light">Clientes</a>
         
       </div>
     </div>
@@ -39,8 +37,8 @@
     <!--navbar-->
     <div id="page-content-wrapper">
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn-primary" id="menu-toggle">Esconder menu</button>
+      <nav class="navbar navbar-expand-lg navbar-light bg-secondary border border-secondary col mb-5">
+        <form method="get" action="index.html"><button  class="btn btn-danger" type="submit">Voltar</button></form>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -49,11 +47,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+              <a class="nav-link text-light" href="agendamentos.html">Inicio <span class="sr-only">(current)</span></a>
             </li>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Configurações
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -67,36 +65,58 @@
         </div>
       </nav>
       <!--Fim navbar-->
-  <div class="container-fluid list-group list-group-flush">
-    <div class="card border border-secondary" style="width: auto;">
-      <form class="needs-validation list-group-item" novalidate>
-        <div class="form-row">
-          <div class="col-md-6 mb-3">
+  <div class="container-fluid list-group list-group-flush ">
+    <form class="needs-validation list-group-item text-dark" novalidate>
+      <div class="form-row">
+          <div class="col-md-3 mb-3 ">
             <label for="validationCustom01">Nome do Cliente</label>
-            <input type="text" class="form-control" id="validationCustom01" value="" required>
+            <input type="text" class="form-control border-secondary" id="validationCustom01" value="" required>
             <div class="valid-feedback">
               Correto!
             </div>
           </div>
-          <div class="col-md-6 mb-3">
+          <div class="col-md-3 mb-3">
             <label for="validationCustom02">Sobrenome</label>
-            <input type="text" class="form-control" id="validationCustom02" value="" required>
+            <input type="text" class="form-control border-secondary" id="validationCustom02" value="" required>
             <div class="valid-feedback">
               Correto!
             </div>
+          </div>
+          <div class="col-md-2 mb-3">
+            <label for="validationCustom02">CPF</label>
+            <input type="text" class="form-control border border-secondary" id="validationCustom02" value="" required>
+            <div class="valid-feedback">
+              Correto!
+            </div>
+          </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-2 mb-3">
+          <label for="validationCustom05">Telefone</label>
+          <input type="text" class="form-control border border-secondary" id="validationCustom05" required>
+          <div class="invalid-feedback">
+            Informe o telefone.
           </div>
         </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationCustom05">Email</label>
+          <input type="text" class="form-control border border-secondary" id="validationCustom05" required>
+          <div class="invalid-feedback">
+            Informe o email.
+          </div>
+        </div>
+      </div>
         <div class="form-row">
-          <div class="col-md-6 mb-3">
+          <div class="col-md-4 mb-3">
             <label for="validationCustom03">Cidade</label>
-            <input type="text" class="form-control" id="validationCustom03" required>
+            <input type="text" class="form-control border border-secondary" id="validationCustom03" required>
             <div class="invalid-feedback">
               Informe a cidade.
             </div>
           </div>
           <div class="col-md-3 mb-3">
             <label for="validationCustom04">UF</label>
-            <select class="custom-select" id="validationCustom04" required>
+            <select class="custom-select border border-secondary" id="validationCustom04" required>
               <option selected disabled value="">Escolha o UF</option>
               <option>RO</option>
               <option>AC</option>
@@ -127,29 +147,59 @@
               <option>DF</option>
             </select>
             <div class="invalid-feedback">
-              Informe o Estado.
+              Informe o estado.
             </div>
           </div>
           <div class="col-md-3 mb-3">
             <label for="validationCustom05">CEP</label>
-            <input type="text" class="form-control" id="validationCustom05" required>
+            <input type="text" class="form-control border border-secondary" id="validationCustom05" required>
             <div class="invalid-feedback">
               Informe um CEP válido.
             </div>
           </div>
         </div>
         <div class="form-row">
-          <div class="col-md-3 mb-3">
+          <div class="col-md-4 mb-3">
+            <label for="validationCustom06">Rua</label>
+            <input type="text" class="form-control border border-secondary" id="validationCustom06" required>
+            <div class="invalid-feedback">
+              Informe a rua
+            </div>
+          </div>
+          <div class="col-md-2 mb-3">
+            <label for="validationCustom06">Bairro</label>
+            <input type="text" class="form-control border border-secondary" id="validationCustom07" required>
+            <div class="invalid-feedback">
+              Informe o bairro.
+            </div>
+          </div>
+          <div class="col-md-1 mb-3">
+            <label for="validationCustom06">Numero</label>
+            <input type="text" class="form-control border border-secondary" id="validationCustom07" required>
+            <div class="invalid-feedback">
+              Informe o numero.
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-2 mb-3">
             <label for="validationCustom06">Placa do veículo</label>
-            <input type="text" class="form-control" id="validationCustom06" required>
+            <input type="text" class="form-control border border-secondary" id="validationCustom06" required>
             <div class="invalid-feedback">
               Informe a placa do veículo.
             </div>
           </div>
+          <div class="col-md-2 mb-3">
+            <label for="validationCustom06">Modelo do veículo</label>
+            <input type="text" class="form-control border border-secondary" id="validationCustom07" required>
+            <div class="invalid-feedback">
+              Informe o modelo do veículo.
+            </div>
+          </div>
           <form class="was-validated">
-            <div class="col-md-5 mb-5">
+            <div class="col-md-10 mb-5">
               <label for="validationTextarea8">Descrição do agendamento</label>
-              <textarea class="form-control" id="validationTextarea8" placeholder="Descrição" required></textarea>
+              <textarea class="form-control border border-secondary" id="validationTextarea8" placeholder="Descrição" required></textarea>
               <div class="invalid-feedback">
                 Preencha a descrição.
               </div>
@@ -157,7 +207,7 @@
         </div>
         <div class="form-group">
         </div>
-        <button class="btn btn-primary" type="submit">Cadastrar</button>
+        <button class="btn btn-primary" type="submit">Confirmar agendamento</button>
       </form>
     </div>
   </div>   
