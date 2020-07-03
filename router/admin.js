@@ -79,7 +79,6 @@ router.get('/clientes/edit/:id', (req, res) => {
             }).catch((err) => {
                 req.flash('error_msg', 'Ocorreu um erro ao editar o clientes')
                 res.redirect('/admin/clientes')
-                console.log(err)
             })
 
         }).catch((err) => {
@@ -104,18 +103,18 @@ router.post('/clientes/deletar', (req, res) => {
 //Agendamentos
 
 router.get('/agendamentos', (req, res) => {
-    Agendamento.find().lean().populate('clientes').sort({date: "desc"}).then((agendamentos)=>{
-        res.render('admin/agendamentos', {agendamentos: agendamentos})
-    }).catch((err)=>{
+    Agendamento.find().lean().populate('clientes').sort({ date: "desc" }).then((agendamentos) => {
+        res.render('admin/agendamentos', { agendamentos: agendamentos })
+    }).catch((err) => {
         req.flash('error_msg', 'Ocorreu um erro ao listar os Serviços Agendados')
         res.redirect('/admin/agendamentos')
     })
-    
+
 })
 
 router.get('/agendamentos/add', (req, res) => {
     Cliente.find().lean().then((clientes) => {
-        res.render('admin/addagendamento', { clientes: clientes})
+        res.render('admin/addagendamento', { clientes: clientes })
     }).catch((err) => {
         req.flash('error_msg', 'Ocorreu um erro ao carregar o formulario de agendamentos')
         res.redirect('/admin/agendamentos')
@@ -125,7 +124,7 @@ router.get('/agendamentos/add', (req, res) => {
 
 router.post('/agendamentos/nova', (req, res) => {
 
-    const newAgendamento ={
+    const newAgendamento = {
         placa: req.body.placa,
         modelo: req.body.modelo,
         descricao: req.body.desc,
@@ -145,8 +144,55 @@ router.post('/agendamentos/nova', (req, res) => {
 
 })
 
-router.get('/agendamentos/edit/:id', (req, res)=>{
-    res.render('admin/editagendamentos')
+router.get('/agendamentos/edit/:id', (req, res) => {
+    Agendamento.findOne({ _id: req.params.id }).lean().then((agendamento) => {
+        Cliente.find().lean().then((clientes) => {
+            res.render('admin/editagendamentos', { clientes: clientes, agendamento: agendamento })
+        }).catch((err) => {
+            req.flash('error_msg', 'Ocorreu um erro ao listar o serviço')
+            res.redirect('/admin/agendamentos')
+        })
+
+    }).catch((err) => {
+        req.flash('error_msg', 'Erro ao carregar o Serviço')
+        res.redirect('/admin/agendamentos')
+    })
+
+})
+
+router.post('/agendamentos/edit', (req, res) => {
+    Agendamento.findOne({ _id: req.body.id }).then((agendamento) => {
+        agendamento.placa = req.body.placa,
+            agendamento.modelo = req.body.modelo,
+            agendamento.tipo = req.body.tipo,
+            agendamento.data = req.body.data,
+            agendamento.descricao = req.body.desc,
+            agendamento.responsavel = req.body.responsavel,
+            agendamento.clientes = req.body.clientes
+
+        agendamento.save().then(() => {
+            req.flash('success_msg', 'Agendamento editado com Sucesso')
+            res.redirect('/admin/agendamentos')
+        }).catch((err) => {
+            console.log(err)
+            req.flash('error_msg', 'Ocorreu Interno')
+            res.redirect('/admin/agendamentos')
+        })
+    }).catch((err) => {
+        req.flash('error_msg', 'Ocorreu um erro ao editar o Agendamento')
+        res.redirect('/admin/agendamentos')
+        console.log(err)
+    })
+})
+
+router.post('/agendamentos/deletar', (req, res) => {
+    Agendamento.deleteOne({ _id: req.body.id }).then(() => {
+        req.flash('success_msg', "Agendamento removido com sucesso")
+        res.redirect('/admin/agendamentos')
+    }).catch((err) => {
+        req.flash('error_msg', 'Ocorreu um erro ao remover o Agendamento')
+        res.redirect('/admin/agendamentos')
+    })
 })
 
 
