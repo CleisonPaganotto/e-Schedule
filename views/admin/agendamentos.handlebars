@@ -1,0 +1,26 @@
+<a href="/admin/agendamentos/add"><button class="btn btn-success">Novo Serviço</button></a>
+<hr>
+<h2>Lista de Serviços Agendados: </h2>
+{{#each agendamentos}}
+<div class="card mt-2">
+    <div class="card-body">
+        <h5 class="d-inline">Cliente: {{clientes.nome}}</h5><br>
+        <p class="m-0 d-inline">Placa do Veiculo: {{placa}}</p><br>
+         <p class="m-0 d-inline">CPF do Cliente: {{clientes.cpf}}</p><br>
+        <p class="m-0 d-inline">Modelo do Veiculo: {{modelo}}</p><br>
+        <p class="m-0 d-inline" >Tipo de Serviço a ser feito: {{tipo}}</p><br>
+        <p class="m-0 d-inline">Data de Entrega do Veiculo: {{data}}</p>
+        <div class="btn-group btn-group-lg  float-right" role="group">
+            <a href="/admin/agendamentos/edit/{{_id}}"><button class="btn btn-success "
+                    style="width: 77px;">Editar</button></a>
+            <form action="/admin/clientes/deletar" method="POST">
+                <input type="hidden" name="id" value="{{_id}}">
+                <button type="submit" class="btn btn-danger ml-2">Deletar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{else}}
+
+{{/each}}

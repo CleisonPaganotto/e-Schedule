@@ -1,0 +1,22 @@
+<a href="/admin/clientes/add"><button class="btn btn-success">Novo Cliente</button></a>
+<hr>
+<h2>Lista de Clientes Cadastrados: </h2>
+{{#each clientes}}
+<div class="card mt-2">
+    <div class="card-body">
+        <h5 class="d-inline">Cliente: {{nome}}</h5><br>
+        <p class="m-0 d-inline">CPF: {{cpf}}</p><br>
+        <p class="m-0 d-inline">Telefone: {{telefone}}</p>
+        <div class="btn-group btn-group-lg  float-right" role="group">
+            <a href="/admin/clientes/edit/{{_id}}"><button class="btn btn-success "
+                    style="width: 77px;">Editar</button></a>
+            <form action="/admin/clientes/deletar" method="POST">
+                <input type="hidden" name="id" value="{{_id}}">
+                <button type="submit" class="btn btn-danger ml-2">Deletar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{{else}}
+
+{{/each}}
