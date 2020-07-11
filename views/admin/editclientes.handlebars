@@ -1,0 +1,36 @@
+
+<form action="/admin/clientes/edit" method="POST">
+    <div class="card-body alert-secondary w-75 mx-auto">
+        <h4 class="mx-auto">Editar Cliente:</h4>
+        <div class="form-group alert border border-dark">
+            <h5>Dados Pessoais</h5>
+            <input type="hidden" name="id" value="{{cliente._id}}">
+            <label for="nome">Nome do Cliente</label>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do Cliente" onkeyup="setCustomValidity('')"" required oninvalid="this.setCustomValidity('Informe o nome do cliente!!')" value="{{cliente.nome}}">
+            <label for="telefone">Telefone</label>
+            <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone" onkeyup="setCustomValidity('')"" required oninvalid="this.setCustomValidity('Informe o telefone do cliente!!')" value="{{cliente.telefone}}">
+            <label for="email">E-mail</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="E-mail" onkeyup="setCustomValidity('')"" required oninvalid="this.setCustomValidity('Informe o email do cliente!!')" value="{{cliente.email}}">
+            <label for="cpf">CPF</label>
+            <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" onkeyup="setCustomValidity('')"" required oninvalid="this.setCustomValidity('Informe o CPF do cliente!!')" value="{{cliente.cpf}}">
+        </div>
+        <div class="form-group alert border border-dark">
+            <h5>Endereço</h5>
+            <label for="cidade">Cidade</label>
+            <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" onkeyup="setCustomValidity('')"" required oninvalid="this.setCustomValidity('Informe a Cidade do cliente!!')" value="{{cliente.cidade}}">
+            <label for="estado">Estado</label>
+            <input type="text" class="form-control" id="estado" name="estado" placeholder="Estado" onkeyup="setCustomValidity('')"" required oninvalid="this.setCustomValidity('Informe o Estado do cliente!!')" value="{{cliente.estado}}">
+            <label for="cep">CEP</label>
+            <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP" onkeyup="setCustomValidity('')"" required oninvalid="this.setCustomValidity('Informe o CEP do cliente!!')" value="{{cliente.cep}}">
+            <label for="rua">Rua</label>
+            <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua" onkeyup="setCustomValidity('')"" required oninvalid="this.setCustomValidity('Informe  Rua do cliente!!')" value="{{cliente.rua}}">
+            <label for="bairro">Bairro</label>
+            <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" onkeyup="setCustomValidity('')"" required oninvalid="this.setCustomValidity('Informe o Bairro do cliente!!')" value="{{cliente.bairro}}">
+            <label for="numero">Numero</label>
+            <input type="text" class="form-control" id="numero" name="numero" placeholder="Numero" onkeyup="setCustomValidity('')"" required oninvalid="this.setCustomValidity('Informe o Numero do cliente!!')" value="{{cliente.numero}}">
+        </div>
+        <button type="submit" class="btn btn-success" style="width: 150px;">Editar Cliente</button>
+        <a href="/admin/clientes"><button type="button" class="btn btn-danger"
+                style="width: 150px;">Cancelar</button></a>
+    </div>
+</form>

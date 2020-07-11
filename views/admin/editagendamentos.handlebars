@@ -1,0 +1,32 @@
+<form action="/admin/agendamentos/edit" method="POST">
+    <div class="needs-validation card-body alert-secondary w-75 mx-auto">
+        <h4 class="mx-auto">Editar Serviço:</h4>
+        <div class="form-group alert border border-dark">
+            <input type="hidden" value="{{agendamento._id}}" name="id">
+            <label for="clientes">Cliente: </label>
+            <select name="clientes" class="custom-select" required
+                onkeyup="setCustomValidity('')" oninvalid="this.setCustomValidity('Informe o Cliente!!')">
+                {{#each clientes}}
+                <option value="{{_id}}">{{nome}}</option>
+                {{else}}
+                {{/each}}
+            </select>
+            <label for="placa">Placa do Veiculo: </label>
+            <input type="text" class="form-control" id="placa" name="placa" value="{{agendamento.placa}}" placeholder="Placa do Veiculo" onkeyup="setCustomValidity('')" required oninvalid="this.setCustomValidity('Informe a placa do Veiculo!!')">
+            <label for="modelo">Modelo do Veiculo: </label>
+            <input type="text" class="form-control" id="modelo" name="modelo" value="{{agendamento.modelo}}" placeholder="Modelo do Veiculo" required onkeyup="setCustomValidity('')" oninvalid="this.setCustomValidity('Informe o modelo do Veiculo!!')">
+            <label for="tipo">Tipo de Serviço a ser Feito: </label>
+            <input type="text" class="form-control" id="tipo" name="tipo" value="{{agendamento.tipo}}" placeholder="Tipo de Serviço a ser Feito" required onkeyup="setCustomValidity('')" oninvalid="this.setCustomValidity('Informe o tipo de serviço que ira ser feito.!!')">    
+            <label for="desc">Descrição do Serviço a ser Feito: </label>
+            <textarea type="text" class="form-control" id="desc" name="desc" placeholder="Descrição do serviço prestado" required onkeyup="setCustomValidity('')" oninvalid="this.setCustomValidity('Informe os tipos de serviço que serão prestados')">{{agendamento.descricao}}</textarea>
+            <label for="data">Data de Entrega do Veiculo: </label>
+            <input type="date" class="form-control" id="data" name="data" value="{{agendamento.data}}" placeholder="Data de Entrega" required>
+            <label for="responsavel">Responsavel pelo serviço: </label>
+            <input type="text" class="form-control" id="responsavel" value="{{agendamento.responsavel}}" name="responsavel" placeholder="Responsavel por realizar o serviço" required onkeyup="setCustomValidity('')" oninvalid="this.setCustomValidity('Informe o responsavel pelo serviço!!')">
+        </div>
+        <button type="submit" class="btn btn-success" style="width: 150px;">Editar Serviço</button>
+        <a href="/admin/agendamentos">
+        <button type="button" class="btn btn-danger"
+                style="width: 150px;">Cancelar</button></a>
+    </div>
+</form>

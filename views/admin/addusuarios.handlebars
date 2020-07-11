@@ -1,0 +1,19 @@
+<form action="/admin/usuarios/novo" method="POST">
+    <div class="needs-validation card-body alert-secondary w-75 mx-auto">
+        <h4 class="mx-auto">Cadastrar novo Usuario:</h4>
+        <div class="form-group alert border border-dark">
+
+            <label for="usuario">Login: </label>
+            <input type="text" class="form-control" id="usuario" name="usuario"
+                placeholder="Responsavel por realizar o serviço" required onkeyup="setCustomValidity('')"
+                oninvalid="this.setCustomValidity('Informe o responsavel pelo serviço!!')">
+            <label for="usuario">Senha: </label>
+            <input type="text" class="form-control" id="usuario" name="usuario"
+                placeholder="Responsavel por realizar o serviço" required onkeyup="setCustomValidity('')"
+                oninvalid="this.setCustomValidity('Informe o responsavel pelo serviço!!')">
+        </div>
+        <button type="submit" class="btn btn-success" style="width: 150px;">Agendar Serviço</button>
+        <a href="/admin/agendamentos"><button type="button" class="btn btn-danger"
+                style="width: 150px;">Cancelar</button></a>
+    </div>
+</form>
