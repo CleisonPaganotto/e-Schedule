@@ -6,11 +6,6 @@ const Cliente = mongoose.model('clientes')
 require('../models/Agendamento')
 const Agendamento = mongoose.model('agendamentos')
 
-
-router.get('/', (req, res) => {
-    res.render("admin/index")
-})
-
 //Rotas de Clientes
 router.get('/clientes', (req, res) => {
     Cliente.find().sort({ date: "desc" }).lean().then((clientes) => {
@@ -194,7 +189,5 @@ router.post('/agendamentos/deletar', (req, res) => {
         res.redirect('/admin/agendamentos')
     })
 })
-
-
 
 module.exports = router
